@@ -1,0 +1,104 @@
+<!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for </button>-->
+
+<header class="hero container">
+  <div class="noscroll">
+    <nav class="nav">
+      <div class="nav_log">
+      <img
+                src="https://onedrive.live.com/embed?resid=AB3AF34BFE317593%2116355&authkey=%21ABW99BbkSD9aVoQ&width=640&height=640"
+                alt=""
+                class="about_testimonial"
+              /><a class="logoname">Tomas Arauz</a>
+        <a class="sublogoname">Software developer</a>
+      </div>
+  
+      
+    
+      <div class="nav-menu active':'nav-menu'">
+      
+      </div>
+    </nav>
+    </div>
+  
+    <section class="hero_Main">
+    <div class="hero_Texts">
+      <h1 class="hero_title">
+      PowerApps Projects V.0.1
+      </h1>
+      <p class="hero_copy">
+      
+This project is divided into two parts: a web version where you can perform or add cryptocurrency accounts, and a Power Apps version which serves as the administrator for these accounts. Various technologies were utilized, including Node.js for the backend, MongoDB as the database, Power Apps, and Angular for the frontend.
+      </p>
+      <div class="hero_contact">
+      
+      <button class="hero_btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><a href="#" class="descaragrbtn">New Account</a></button>
+    
+      </div> 
+    </div>
+  
+    <figure class="hero_picture">
+      <img src="https://onedrive.live.com/embed?resid=AB3AF34BFE317593%2116403&authkey=%21AAtRXDvg_WgWWbQ&width=1389&height=785" />
+    </figure>
+    </section>
+  </header>
+  
+  
+  
+
+<div class="mainPro">
+    <div class="PYT">
+        <h1 class="title">Accounts</h1>
+    </div>
+    <div class="proyectosAll">
+      
+
+        <div class="card" *ngFor="let item of data">
+              <div class="imgBx IMG5"> </div>
+                  <div class="content">
+                      <span class="price">
+                          <a href="#">{{item.Name_cuenta}}</a>
+                      </span>
+                      <ul>
+                          <li>  {{item._id}}</li>
+                          <li> {{item.Dinero}} $</li>
+                      </ul>
+                      <!--<button class="button-62" role="button"><a href="https://drive.google.com/file/d/1GOFzU0ylxtk-Y527zeY1drnEGbJDd7uf/view?usp=sharing" target="_blank">Go</a></button>-->
+                  </div>
+          </div>
+  
+    </div>
+  </div>
+
+
+  
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Accounts</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Account Name:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">USD:</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btntomas">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
