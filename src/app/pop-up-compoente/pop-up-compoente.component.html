@@ -8,6 +8,7 @@
                 src="https://onedrive.live.com/embed?resid=AB3AF34BFE317593%2116355&authkey=%21ABW99BbkSD9aVoQ&width=640&height=640"
                 alt=""
                 class="about_testimonial"
+                routerLink="/"
               /><a class="logoname">Tomas Arauz</a>
         <a class="sublogoname">Software developer</a>
       </div>
@@ -31,9 +32,10 @@ This project is divided into two parts: a web version where you can perform or a
       </p>
       <div class="hero_contact">
       
-      <button class="hero_btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><a href="#" class="descaragrbtn">New Account</a></button>
-    
-      </div> 
+      <!--<button class="hero_btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><a href="#" class="descaragrbtn">New Account</a></button>
+    --> 
+    <button   routerLink="/FormC" class="hero_btn"  ><a href="#" class="descaragrbtn">New Account</a></button>
+     </div> 
     </div>
   
     <figure class="hero_picture">
@@ -47,12 +49,13 @@ This project is divided into two parts: a web version where you can perform or a
 
 <div class="mainPro">
     <div class="PYT">
-        <h1 class="title">Accounts</h1>
+  
+        <h1 class="title"  >Accounts</h1>
     </div>
     <div class="proyectosAll">
       
 
-        <div class="card" *ngFor="let item of data">
+        <div class="card" *ngFor="let item of datalist">
               <div class="imgBx IMG5"> </div>
                   <div class="content">
                       <span class="price">
@@ -62,7 +65,7 @@ This project is divided into two parts: a web version where you can perform or a
                           <li>  {{item._id}}</li>
                           <li> {{item.Dinero}} $</li>
                       </ul>
-                      <!--<button class="button-62" role="button"><a href="https://drive.google.com/file/d/1GOFzU0ylxtk-Y527zeY1drnEGbJDd7uf/view?usp=sharing" target="_blank">Go</a></button>-->
+                      <button class="button-62" role="button" routerLink="/list-account" (click)="deleted(item._id)"><a >Deleted</a></button>
                   </div>
           </div>
   
@@ -79,24 +82,25 @@ This project is divided into two parts: a web version where you can perform or a
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form [formGroup]="form" (ngSubmit)="submit()">
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Account Name:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" formControlName="cuenta" id="recipient-name">
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">USD:</label>
             <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <input type="text" class="form-control" formControlName="Monto" aria-label="Amount (to the nearest dollar)">
                 <span class="input-group-text">.00</span>
               </div>
           </div>
+          <div class="modal-footer">
+            <a href="/users"  type="submit" class="btn btn-primary btntomas">PIMPA</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit"     class="btn btn-primary btntomas" data-bs-dismiss="modal">Send</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btntomas">Send</button>
       </div>
     </div>
   </div>
